@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/RiteshYadavCNB/Little-Lemon-Backend/issues"
   },
-  "homepage": "https://github.com/RiteshYadavCNB/Little-Lemon-Backend#readme"
+  "homepage": "https://github.com/RiteshYadavCNB/Little-Lemon-Backend#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
