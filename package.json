@@ -1,0 +1,21 @@
+{
+  "name": "little-lemon-backend",
+  "version": "1.0.0",
+  "description": "backend for little-lemon",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiteshYadavCNB/Little-Lemon-Backend.git"
+  },
+  "keywords": [],
+  "author": "Ritesh Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RiteshYadavCNB/Little-Lemon-Backend/issues"
+  },
+  "homepage": "https://github.com/RiteshYadavCNB/Little-Lemon-Backend#readme"
+}
