@@ -2,7 +2,7 @@
   "name": "little-lemon-backend",
   "version": "1.0.0",
   "description": "backend for little-lemon",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "nodemon --env-file=.env src/server.js"
