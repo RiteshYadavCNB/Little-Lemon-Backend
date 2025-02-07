@@ -3,6 +3,7 @@ import errorHandler from './middlewares/error.js';
 import logger from './middlewares/logger.js';
 import connectDB from './config/db.js';
 import router from './routes/product.js';
+import cors from 'cors';
 
 const PORT = process.env.PORT;
 
@@ -22,6 +23,13 @@ app.use(errorHandler);
 
 // connect to MongoDB database
 connectDB();
+
+// enabling CORS for all origins
+app.use(cors({
+    origin: "*", //allows all origins
+    methods: "GET,POST,PUT,DELETE", //specify allowed methods
+    allowedHeaders: "Content-Type,Authorization"
+}));
 
 // Routes
 app.use('/api/products', router);
