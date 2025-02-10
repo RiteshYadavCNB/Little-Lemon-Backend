@@ -19,8 +19,15 @@ export const getProducts = async(req, res) => {
         const limit = parseInt(req.query.limit) || 5;
         const skip = (page - 1) * limit;
 
+        // fetch products with pagination
         const products = await ProductModel.find().skip(skip).limit(limit);
-        return res.status(200).json(products);
+        // get total product count
+        const totalProducts = await ProductModel.countDocuments();
+        
+        return res.status(200).json({
+            products,
+            hasMore: skip + products.length < totalProducts // check if there are more products
+        });
     }
     catch(err) {
         res.status(500).json({
