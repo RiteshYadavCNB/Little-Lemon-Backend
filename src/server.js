@@ -2,7 +2,8 @@ import express from 'express';
 import errorHandler from './middlewares/error.js';
 import logger from './middlewares/logger.js';
 import connectDB from './config/db.js';
-import router from './routes/product.js';
+import productRouter from './routes/product.js';
+import keepAliveRouter from './utils/keepAlive.js';
 import cors from 'cors';
 
 const PORT = process.env.PORT;
@@ -31,8 +32,12 @@ app.use(cors({
     allowedHeaders: "Content-Type,Authorization"
 }));
 
+// Keeping the render awake
+app.use(keepAliveRouter);
+
 // Routes
-app.use('/api/products', router);
+app.use('/api/products', productRouter);
+
 
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));

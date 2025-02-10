@@ -1,20 +1,20 @@
 import express from 'express';
 import { createProduct, deleteProduct, getProducts } from '../controllers/productController.js';
 
-const router = express.Router();
+const productRouter = express.Router();
 
 // routes
 
 // get all products from productInfo Collection from DB
-router.get('/', getProducts);
+productRouter.get('/', getProducts);
 
 
 
 // create new entry into the productInfo collection into DB
-router.post('/', createProduct);
+productRouter.post('/', createProduct);
 
 // delete a document from the productInfo collection from DB
-router.delete('/', deleteProduct);
+productRouter.delete('/', deleteProduct);
 
 
-export default router;
+export default productRouter;
