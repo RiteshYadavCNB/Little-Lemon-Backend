@@ -13,7 +13,13 @@ export const getProducts = async(req, res) => {
             const product = await ProductModel.find({name: {$regex: new RegExp(searchQuery, "i")}});
             return res.status(200).json(product);
         }
-        const products = await ProductModel.find();
+
+        // pagination
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 5;
+        const skip = (page - 1) * limit;
+
+        const products = await ProductModel.find().skip(skip).limit(limit);
         return res.status(200).json(products);
     }
     catch(err) {
